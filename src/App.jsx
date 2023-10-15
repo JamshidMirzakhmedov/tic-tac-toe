@@ -40,7 +40,7 @@ function App() {
   const winner = checkWin(cells);
   let message = winner
     ? `🎉  winner: ${winner === "cross" ? "X" : "O"} ! 🎉`
-    : (currentTurn ? "O" : "X") + " current player";
+    : (currentTurn ? "O" : "X") + " - current player";
 
   if (!winner && !cells.includes("")) {
     message = "Draw";
@@ -58,7 +58,7 @@ function App() {
   return (
     <section className="main">
       <div className="header">
-        <h1 className="title">Tic Tac Toe</h1>
+        <img className="icon" src="/logo.png" alt="logo" />
         <h3 className={winner ? "winner-title" : "current-player"}>
           {message}
         </h3>
