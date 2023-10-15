@@ -1,0 +1,132 @@
+:root {
+  background-color: #192a33;
+  color: rgb(52 193 189);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+  text-align: center;
+  padding: 2%;
+}
+
+.game-container {
+  display: grid;
+  width: 40%;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, auto);
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.current-player {
+  box-shadow: 5px 5px 10px #142128, -5px -5px 10px #1e333e;
+  padding: 1rem 2rem;
+}
+
+h3.winner-title {
+  color: rgb(243 178 57);
+  font-size: 2rem;
+}
+.cell {
+  /* border: 2px solid #ccc; */
+  width: 10rem;
+  height: 10rem;
+  font-size: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 6px;
+  border-radius: 10%;
+  box-shadow: 5px 5px 10px #142128, -5px -5px 10px #1e333e;
+}
+
+.reset {
+  padding: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10%;
+  background-color: inherit;
+  color: white;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.circle {
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  border: 15px solid rgb(243 178 57);
+  box-sizing: border-box;
+}
+
+.cross {
+  height: 90%;
+  width: 90%;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.cross:before,
+.cross:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(52 193 189);
+}
+
+.cross:before {
+  left: 50%;
+  width: 25%;
+  margin-left: -15%;
+  height: 100%;
+}
+.cross:after {
+  height: 25%;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -15%;
+}
+.cell div.cross,
+.cell div.circle {
+  cursor: not-allowed;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 1rem 0;
+    font-size: 0.5rem;
+  }
+  .game-container {
+    width: 70%;
+  }
+  .reset {
+    font-size: 1.5rem;
+  }
+  h3.winner-title {
+    font-size: 1rem;
+  }
+
+  .cell {
+    width: 4rem;
+    height: 4rem;
+    font-size: 4em;
+  }
+  .cross,
+  .circle {
+    height: 70%;
+    width: 70%;
+  }
+}
